@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+Home
+<main>
+    <ul class="albumList" >
+        <li class="album" th:each="a: ${albumList}">
+            <div class="album__title" th:text="${a.title}">album__title</div>
+        </li>
+    </ul>
+</main>
+</body>
+</html>
