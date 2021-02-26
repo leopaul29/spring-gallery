@@ -9,7 +9,9 @@ Home
 <main>
     <ul class="albumList" >
         <li class="album" th:each="a: ${albumList}">
-            <div class="album__title" th:text="${a.title}">album__title</div>
+            <div class="album__title" >
+                <a th:href="@{/albums/{id}(id=${a.id})}" th:text="${a.title}">album__title</a>
+            </div>
         </li>
     </ul>
 </main>
