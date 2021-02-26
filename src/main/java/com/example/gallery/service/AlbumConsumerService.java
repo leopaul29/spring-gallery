@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface AlbumConsumerService {
     List<Album> processAlbumDataFromAlbumArray();
+    Album processAlbumDataFromAlbum(Long id);
 }

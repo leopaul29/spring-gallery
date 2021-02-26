@@ -21,12 +21,18 @@ public class AlbumConsumerServiceImpl implements AlbumConsumerService {
     }
 
     public List<Album> processAlbumDataFromAlbumArray() {
-
         ResponseEntity<Album[]> responseEntity =
                 restTemplate.getForEntity(BASE_URL, Album[].class);
+
         Album[] albumArray = responseEntity.getBody();
         return Arrays.stream(albumArray)
-                //.map(Album::getTitle)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Album processAlbumDataFromAlbum(Long id) {
+        ResponseEntity<Album> responseEntity =
+                restTemplate.getForEntity(BASE_URL + "/"+ id, Album.class);
+        return responseEntity.getBody();
     }
 }
