@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${album.id}-${album.title}|">Album</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<main>
+    <div class="content">
+        <a th:href="@{/}">Home</a>
+        <div class="album__header" th:object="${album}">
+            <div class="album__prec">Previous</div>
+            <h1 class="album__title" th:text="|*{id}-*{title}|">album__title</h1>
+            <div class="album__next">Next</div>
+        </div>
+        <div class="gallery">
+            <div class="gallery__card" th:each="p: ${photos}">
+                <a th:href="${p.url}">
+                    <img class="gallery__photo" th:src="${p.thumbnailUrl}" th:alt="|${p.id}-${p.title}|"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
