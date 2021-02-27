@@ -3,9 +3,12 @@
 > In this project, I made a webapp to consume a gallery API (album and photos).
 
 In this webapp we can
-- [ ] show a list of albums
-- [ ] show a single albums with multiple photos
+- [x] show a list of albums
+- [x] show a single albums with multiple photos
 - [ ] show a signle photo
+- [ ] import file photo
+- [ ] manage cache settings
+- [ ] test restclientapi
 
 ## Style
 /* Color Theme Swatches in Hex */
@@ -35,5 +38,7 @@ In this webapp we can
 - https://spring.io/guides/gs/consuming-rest/
 - https://www.thymeleaf.org/documentation.html
 - https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
-
-
+- https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/
+- https://www.baeldung.com/spring-resttemplate-json-list
+- https://www.baeldung.com/rest-template
+- https://fonts.google.com/specimen/Dancing+Script?preview.text_type=custom
