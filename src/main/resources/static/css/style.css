@@ -1,3 +1,80 @@
+* {
+margin: 0;
+padding: 0;
+}
+a{text-decoration: none;}
+ul{list-style: none;}
+@font-face {
+  font-family: dancingScript;
+  src: url(/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+body {
+    font-family: 'Lato', sans-serif;
+    min-height:100vh;
+    padding: 50px;
+    color:#485460;
+    background-color: #FFFFFF;
+}
+/* Color Theme Swatches in Hex */
+.Illustration-1-hex { background-color: #F2F2F2; }
+.Illustration-2-hex { background-color: #BF8360; }
+.Illustration-3-hex { background-color: #F22ED2; }
+.Illustration-4-hex { background-color: #F2059F; }
+.Illustration-5-hex { background-color: #F20587; }
+.square{
+    width:50px;
+    height:50px;
+    display:inline-block;
+}
+/* Home page */
+.header {
+    display:flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.header__title{
+    background-color: #BF8360;
+    color: #F2F2F2;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+.main {
+    max-width: 1140px;
+    margin:auto;
+}
+.albumList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 30px;
+}
+.album{
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#F2059F;
+    color: #F2F2F2;
+}
+.album:hover{
+    background-color:#F20587;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.album__title{
+    font-family: dancingScript;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+/* Album page */
 .gallery{
     display: flex;
     flex-direction: row;

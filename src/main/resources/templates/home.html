@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-Home
-<main>
-    <ul class="albumList" >
-        <li class="album" th:each="a: ${albumList}">
-            <div class="album__title" >
-                <a th:href="@{/albums/{id}(id=${a.id})}" th:text="${a.title}">album__title</a>
+<div class="Illustration-1-hex square"></div>
+<div class="Illustration-2-hex square"></div>
+<div class="Illustration-3-hex square"></div>
+<div class="Illustration-4-hex square"></div>
+<div class="Illustration-5-hex square"></div>
+<header class="header">
+    <div class="header__title">
+        <h1 class="title">Album list</h1>
+    </div>
+</header>
+<main class="main">
+    <div class="albumList" >
+        <a th:href="@{/albums/{id}(id=${a.id})}" th:each="a: ${albumList}">
+            <div class="album" >
+                 <div class="album__title" th:text="${a.title}">album__title</div>
             </div>
-        </li>
-    </ul>
+        </a>
+    </div>
 </main>
 </body>
 </html>
