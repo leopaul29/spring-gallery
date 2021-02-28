@@ -5,7 +5,7 @@
 In this webapp we can
 - [x] show a list of albums
 - [x] show a single albums with multiple photos
-- [ ] show a signle photo
+- [x] show a signle photo
 - [ ] import file photo
 - [ ] manage cache settings
 - [ ] test restclientapi
