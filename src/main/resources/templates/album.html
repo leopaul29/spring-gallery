@@ -6,22 +6,52 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<main>
-    <div class="content">
-        <a th:href="@{/}">Home</a>
-        <div class="album__header" th:object="${album}">
-            <div class="album__prec">Previous</div>
-            <h1 class="album__title" th:text="|*{id}-*{title}|">album__title</h1>
-            <div class="album__next">Next</div>
+<div class="Illustration-1-hex square"></div>
+<div class="Illustration-2-hex square"></div>
+<div class="Illustration-3-hex square"></div>
+<div class="Illustration-4-hex square"></div>
+<div class="Illustration-5-hex square"></div>
+<header class="header">
+    <nav class="header__nav" th:object="${album}">
+        <div class="header__navLeft">
+            <a class="header__navItem" th:href="@{/}">Home</a>
+            <th:block th:if="*{id > 1}">
+                <a th:href="@{/albums/{id}(id=${id}-1)}" class="header__navItem">&#8249;</a>
+            </th:block>
         </div>
+        <div class="header__title transformation-inclination" >
+            <h1 class="album__title" th:text="|*{id}-*{title}|">album__title</h1>
+        </div>
+        <div class="header__navRight">
+            <a th:href="@{/albums/{id}(id=${id}+1)}" class="header__navItem">&#8250;</a>
+        </div>
+    </nav>
+</header>
+<main class="main">
+    <div class="content">
         <div class="gallery">
-            <div class="gallery__card" th:each="p: ${photos}">
-                <a th:href="${p.url}">
-                    <img class="gallery__photo" th:src="${p.thumbnailUrl}" th:alt="|${p.id}-${p.title}|"/>
-                </a>
+            <div class="gallery__card" th:each="p: ${photos}"
+                 th:attr="onclick=|on('${p.url}')|">
+                <img class="gallery__photo" th:src="${p.thumbnailUrl}" th:alt="|${p.id} - ${p.title}|"/>
+                <!--<a th:href="${p.url}"></a>-->
             </div>
         </div>
     </div>
+    <div id="overlay" onclick="off()">
+        <div class="overlay__content">
+            <img id="overlay__img"/>
+        </div>
+    </div>
 </main>
+<script>
+    function on(imgURL) {
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("overlay__img").src= imgURL;
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+</script>
 </body>
 </html>
