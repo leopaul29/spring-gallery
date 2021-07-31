@@ -1,10 +1,12 @@
 package com.example.gallery.service;
 
 import com.example.gallery.data.Photo;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,8 +30,7 @@ public class PhotoConsumerServiceImpl implements PhotoConsumerService {
     }
 
     public List<Photo> processPhotoDataFromAlbum(Long id){
-        ResponseEntity<Photo[]> responseEntity =
-                restTemplate.getForEntity(BASE_URL, Photo[].class);
+        ResponseEntity<Photo[]> responseEntity = restTemplate.getForEntity(BASE_URL, Photo[].class);
 
         Photo[] photoArray = responseEntity.getBody();
         return Arrays.stream(photoArray)

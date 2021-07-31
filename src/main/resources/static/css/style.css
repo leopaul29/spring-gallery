@@ -39,6 +39,9 @@ body {
     padding: 20px 50px;
     border-radius: 10px;
 }
+.title {
+    font-family: dancingScript;
+}
 .main {
     max-width: 1140px;
     margin:auto;
@@ -55,18 +58,15 @@ body {
     width: 200px;
     height: 300px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:#F2059F;
     color: #F2F2F2;
     transition: 0.15s;
+    border: solid 5px #F20587;
 }
 .album:hover{
-    border: solid 5px;
-    padding: 5px;
-    border-color:#F20587;
     background-color:#F2F2F2;
     color: #F2059F;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
@@ -101,6 +101,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 10px;
  }
 .gallery{
     display: flex;
